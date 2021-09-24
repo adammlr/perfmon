@@ -1,39 +1,45 @@
 import './App.css';
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
   Switch,
-  Link
+  Link,
+  Route
 } from "react-router-dom";
-import { ApmRoute as Route } from '@elastic/apm-rum-react';
 
 import About from './About';
 import Home from './Home';
+import Raygun from './Raygun';
+import Todo from './Todo';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-          <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-          </ul>
-        </nav>
-
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
-        <Switch>
-          <Route path="/about" component={About} />
-          <Route path="/" component={Home} />
-        </Switch>
-      </div>
-    </Router>
+        <BrowserRouter>
+          <Raygun />
+            <div>
+              <nav>
+                <ul>
+                  <li>
+                    <Link to="/">Home</Link>
+                  </li>
+                  <li>
+                    <Link to="/about">About</Link>
+                </li>
+                <li>
+                    <Link to="/todo">Todos</Link>
+                  </li>
+                </ul>
+              </nav>
+<main>
+              <Switch>
+              <Route path="/about" component={About} />
+              <Route path="/todo" component={Todo} />
+                <Route path="/" component={Home} />
+              </Switch>
+              </main>
+            </div>
+          </BrowserRouter>
       </header>
     </div>
   );
