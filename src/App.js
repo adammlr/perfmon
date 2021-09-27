@@ -25,7 +25,7 @@ function App() {
                     <Link to="/about">About</Link>
                       </li>
                       <li>
-                    <Link to="/todo">About</Link>
+                    <Link to="/todo">Todo</Link>
                   </li>
                 </ul>
               </nav>
