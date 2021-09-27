@@ -29,14 +29,10 @@ function App() {
                   </li>
                 </ul>
               </nav>
-
-              {/* A <Switch> looks through its children <Route>s and
-                  renders the first one that matches the current URL. */}
               <Switch>
                 <Route path="/about" component={About} />
-                    <Route path="/todo" component={Todo} />
-                    <Route path="/" component={Home} />
-                    
+                <Route path="/todo" component={Todo} />
+                <Route path="/" component={Home} />
               </Switch>
             </div>
           </Router>
